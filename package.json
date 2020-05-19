@@ -1,7 +1,7 @@
 {
   "name": "pwyf-visualisation",
   "version": "1.0.0",
-  "description": "My splendid Nuxt.js project",
+  "description": "Visualisation of Publish What You Fund's IATI data",
   "author": "Mark Brough",
   "private": true,
   "scripts": {
@@ -13,19 +13,17 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "bootstrap": "^4.1.3",
-    "bootstrap-vue": "^2.0.0-rc.11",
-    "chart.js": "^2.8.0",
-    "jquery": "^3.4.0",
-    "nuxt": "2.5.1",
-    "popper.js": "^1.14.7",
-    "push-dir": "^0.4.1",
-    "vue": "^2.5.18",
-    "vue-chartjs": "^3.4.2",
+    "@nuxtjs/axios": "^5.10.3",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.14.0",
+    "chart.js": "^2.9.3",
+    "jquery": "^3.5.1",
+    "nuxt": "^2.12.2",
+    "vue": "^2.6.11",
+    "vue-chartjs": "^3.5.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.4"
   }
 }
