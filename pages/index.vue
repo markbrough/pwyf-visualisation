@@ -1,12 +1,22 @@
 <template>
   <div class="container-fluid" style="margin-top: 20px;">
     <div>
-      <h1>
-        Publish What You Fund IATI Data Visualisation
-      </h1>
-      <div class="alert alert-warning">
-        <b>Disclaimer:</b> This site is unofficial, based on <a href="http://publishwhatyoufund.org">Publish What You Fund</a>'s <a href="http://iatiregistry.org/publisher/pwyf">IATI data</a>.
-      </div>
+      <b-row>
+        <b-col md="8">
+          <h1>
+            Publish What You Fund: Transparency
+          </h1>
+          <h2 style="font-style: italic;">
+            A visualisation of our revenue and expenditure, based on our IATI data.
+          </h2>
+        </b-col>
+        <b-col md="4" class="text-md-right">
+          <a href="https://www.publishwhatyoufund.org/">
+            <img src="https://www.publishwhatyoufund.org/wp-content/themes/pwyf/assets/images/Publish-What-You-Fund-logo.svg" width="300" alt="Publish What You Fund" />
+          </a>
+        </b-col>
+      </b-row>
+      <hr />
       <p class="lead">The idea for this site was sparked by some debates about the appropriate granularity of open data and the limits of transparency. It can hopefully be seen as a contribution to those debates. The data published by Publish What You Fund about its own finances is possibly the most detailed and granular data released by any organisation. Presented here unchanged from the organisation's own IATI publication, it contains personnel costs aggregated by month, but otherwise every line item from the financial system is published. Revenue data is also published. The detailed expense classification (e.g. classification by salaries vs flights or hotel costs) is quite unique to Publish What You Fund's data; most other organisations publish much more aggregate data. The extent to which this approach could or should be replicated by other organisations is of course open for discussion.</p>
       <template v-if="activityData == null">
         <h2 class="loading-text">(Loading data...)</h2>
@@ -127,7 +137,7 @@ export default {
         )
         this.$nuxt.$loading.finish()
       }).catch(error => {
-        alert("Sorry, there was an error loading the data! Perhaps the IATI XML file moved or is currently unavailable?")
+        alert("Sorry, there was an error loading the data! Perhaps the IATI XML file moved or is currently unavailable? Try reloading the page.")
         console.log(error.response)
       })
     }
