@@ -119,7 +119,7 @@ export default {
       }))
     },
     loadData() {
-      const API_URL = 'https://cors-anywhere.herokuapp.com/http://sage2iati.publishwhatyoufund.org/publish-what-you-fund/activity.xml'
+      const API_URL = 'https://sage2iati.publishwhatyoufund.org/publish-what-you-fund/activity.xml'
       const _this = this
       return this.$axios.$get(`${API_URL}`, {
         headers: {
