@@ -129,16 +129,22 @@ export default {
       }).then(data => {
         this.activityData = xmlJs.xml2js(data, {compact: true})['iati-activities']['iati-activity'].map(
           activity => {
-            activity.transactionsTable = this.makeTransactionsTable(activity.transaction, _this)
+            if (activity.transaction === undefined) {
+              activity.transaction = []
+              activity.transactionsTable = []
+            } else {
+              activity.transactionsTable = this.makeTransactionsTable(activity.transaction, _this)
+            }
             return activity
           }
         ).sort(
           (a,b) => a["iati-identifier"]._text > b["iati-identifier"]._text ? 1 : -1
         )
         this.$nuxt.$loading.finish()
-      }).catch(error => {
+      })
+      .catch(error => {
         alert("Sorry, there was an error loading the data! Perhaps the IATI XML file moved or is currently unavailable? Try reloading the page.")
-        console.log(error.response)
+        console.log('Error loading data', error)
       })
     }
   },
